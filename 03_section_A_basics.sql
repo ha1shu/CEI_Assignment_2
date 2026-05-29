@@ -139,7 +139,8 @@ INSERT INTO customers VALUES
 
 -- ============================================================
 -- Q6: Insert a product with unit_price = -50 — constraint demo
--- Concept: CHECK constraint enforces business rules at the DB level.
+
+--  CHECK constraint enforces business rules at the DB level.
 --          unit_price > 0 means negative prices are impossible.
 
 
@@ -155,11 +156,7 @@ INSERT INTO customers VALUES
   The database rejects the INSERT with:
     ERROR 3819 (HY000): Check constraint 'products_chk_1' is violated.
 
-  WHY THIS MATTERS:
-  Without CHECK constraints, a developer mistake or bad data entry
-  could insert negative prices, zero prices, or nonsensical values.
-  The constraint acts as the last line of defence — even if application
-  code has a bug, the database guarantees data integrity.
+
 
   OTHER CHECK CONSTRAINTS IN THIS SCHEMA:
   - stock_qty >= 0          (stock cannot go below zero)
@@ -171,12 +168,12 @@ INSERT INTO customers VALUES
 
 -- DEMONSTRATION: This INSERT will intentionally FAIL
 -- Uncomment to see the error:
--- INSERT INTO products VALUES
--- (209, 'Broken Product', 'Electronics', 'TestBrand', -50.00, 100);
+ INSERT INTO products VALUES
+ (209, 'Broken Product', 'Electronics', 'TestBrand', -50.00, 100);
 
 -- DEMONSTRATION: What a valid insert looks like for comparison:
--- INSERT INTO products VALUES
--- (209, 'Valid Product', 'Electronics', 'TestBrand', 999.00, 100);
+INSERT INTO products VALUES
+(209, 'Valid Product', 'Electronics', 'TestBrand', 999.00, 100);
 
 
 -- END OF SECTION A
