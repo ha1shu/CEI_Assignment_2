@@ -104,7 +104,7 @@ DESCRIBE order_items;
 
 
 -- ============================================================
--- Q5: Constraints on the email column + duplicate email behavior
+-- Q5: What constraints are applied to the email column in the customers table? What would happen if you tried to insert a duplicate email?
 -- Concept: UNIQUE constraint prevents duplicate values.
 --          NOT NULL ensures the column always has a value.
 
@@ -137,7 +137,7 @@ INSERT INTO customers VALUES
 
 
 -- ============================================================
--- Q6: Insert a product with unit_price = -50 — constraint demo
+-- Q6: Insert a product with unit_price = -50 — constraint 
 
 --  CHECK constraint enforces business rules at the DB level.
 --          unit_price > 0 means negative prices are impossible.
