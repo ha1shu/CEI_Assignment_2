@@ -9,7 +9,6 @@ USE shopease;
 -- ============================================================
 -- Q1: Display all columns and rows from the customers table
 -- Concept: SELECT * retrieves every column and every row
--- ============================================================
 
 SELECT * FROM customers;
 
