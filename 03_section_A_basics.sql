@@ -23,8 +23,8 @@ SELECT * FROM customers;
 
 
 -- ============================================================
--- Q2: Retrieve only first_name, last_name, and city
--- Concept: Column projection — select only what you need
+-- Q2: Retrieve only first_name, last_name, and city of all Customers
+
 
 
 SELECT first_name, last_name, city
@@ -61,11 +61,17 @@ FROM products;
 
 
 -- ============================================================
--- Q4: Primary Keys of each table — identification + explanation
+-- Q4: Identify the Primary Key of each table in the schema. Explain why a Primary Key must be unique and NOT NULL.
+
 -- Concept: A PRIMARY KEY uniquely identifies every row in a table.
 --          It must be UNIQUE (no two rows share the same value) and
 --          NOT NULL (every row must have an identity).
 
+-- we can verify the Primary Keys by checking the table structure:
+DESCRIBE customers;
+DESCRIBE products;
+DESCRIBE orders;
+DESCRIBE order_items;
 
 /*
   PRIMARY KEYS IN THIS SCHEMA:
@@ -96,11 +102,7 @@ FROM products;
   the system.
 */
 
--- we can verify the Primary Keys by checking the table structure:
-DESCRIBE customers;
-DESCRIBE products;
-DESCRIBE orders;
-DESCRIBE order_items;
+
 
 
 -- ============================================================
@@ -134,6 +136,7 @@ INSERT INTO customers VALUES
 -- DEMONSTRATION: This INSERT will SUCCEED (unique email)
 INSERT INTO customers VALUES
 (109, 'Test', 'User', 'newuser@email.com', 'Surat', 'Gujarat', '2024-09-01', FALSE);
+
 
 
 -- ============================================================
